@@ -20,12 +20,12 @@ apt update && apt upgrade -y
 
 # Install required packages including PHP 8.0
 echo "Installing pre-reqs"
-apt install -y apache2 mariadb-server libapache2-mod-php8.0 php8.0-gd php8.0-json php8.0-mysql php8.0-curl php8.0-mbstring php8.0-intl php8.0-imagick php8.0-xml php8.0-zip
+apt install -y apache2 mariadb-server libapache2-mod-php8.0 php8.0-gd php8.0-cli php8.0-mysql php8.0-curl php8.0-mbstring php8.0-intl php8.0-imagick php8.0-xml php8.0-zip
 
 # Restart Apache
 echo "Restarting the Apache service"
 systemctl restart apache2
-
+systemctl start mariadb
 # Download and extract Nextcloud
 echo "Pulling the latest version of Nextcloud"
 wget https://download.nextcloud.com/server/releases/latest.zip -P /tmp
