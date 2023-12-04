@@ -4,13 +4,19 @@ This Bash script automates the installation of Nextcloud on a Raspberry Pi. It t
 
 ## Usage
 
-1. Make sure you are running the script as root:
+1. Configure the appropriate permissions for the script
+    ```bash
+    cd NextCloudInstaller
+    sudo chmod +x Installer.sh
+    ```
+
+2. Make sure you are running the script as root:
 
     ```bash
     sudo ./Installer.sh
     ```
 
-2. Follow the on-screen prompts.
+3. Follow the on-screen prompts.
 
 ## Prerequisites
 
