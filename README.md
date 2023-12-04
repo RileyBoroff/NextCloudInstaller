@@ -22,7 +22,7 @@ This Bash script automates the installation of Nextcloud on a Raspberry Pi. It t
 
 - Raspberry Pi running a Debian-based operating system.
 - Internet connection for downloading Nextcloud and required packages.
-- gunzip, wget
+- unzip, wget
 
 ## Installation Steps
 
