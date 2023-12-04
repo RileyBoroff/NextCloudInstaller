@@ -6,14 +6,14 @@ set -x
 # Basic Nextcloud installer for Raspberry Pi
 
 # Check if the script is run as root
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run as root"
   exit
 fi
 
 # Update and upgrade system
 echo "Updating the system"
-apt update && sudo apt upgrade -y
+apt update && apt upgrade -y
 
 # Install required packages
 echo "Installing pre-reqs"
@@ -35,7 +35,7 @@ echo
 
 # Set up MySQL for Nextcloud using the --password option
 echo "Setting up the database for Nextcloud"
-mysql --user=root --password=$mysql_password <<EOF
+mysql --user=root --password="$mysql_password" <<EOF
 CREATE DATABASE nextcloud;
 CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY '$mysql_password';
 GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';
